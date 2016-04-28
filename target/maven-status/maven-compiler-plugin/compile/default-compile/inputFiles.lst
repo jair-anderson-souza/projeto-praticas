@@ -1,0 +1,16 @@
+/home/jairanderson/NetBeansProjects/projeto-praticas/src/main/java/io/github/jass2125/projeto/praticas/facade/PessoaFacade.java
+/home/jairanderson/NetBeansProjects/projeto-praticas/src/main/java/io/github/jass2125/projeto/praticas/entidades/Game.java
+/home/jairanderson/NetBeansProjects/projeto-praticas/src/main/java/io/github/jass2125/projeto/praticas/dao/PessoaDaoImpl.java
+/home/jairanderson/NetBeansProjects/projeto-praticas/src/main/java/io/github/jass2125/projeto/praticas/facade/GameFacadeImpl.java
+/home/jairanderson/NetBeansProjects/projeto-praticas/src/main/java/io/github/jass2125/projeto/praticas/dao/PessoaDao.java
+/home/jairanderson/NetBeansProjects/projeto-praticas/src/main/java/io/github/jass2125/projeto/praticas/controlador/PessoaControlador.java
+/home/jairanderson/NetBeansProjects/projeto-praticas/src/main/java/io/github/jass2125/projeto/praticas/entidades/Pessoa.java
+/home/jairanderson/NetBeansProjects/projeto-praticas/src/main/java/io/github/jass2125/projeto/praticas/dao/GameDao.java
+/home/jairanderson/NetBeansProjects/projeto-praticas/src/main/java/io/github/jass2125/projeto/praticas/factory/ConnectionFactory.java
+/home/jairanderson/NetBeansProjects/projeto-praticas/src/main/java/io/github/jass2125/projeto/praticas/infraestrutura/db/DBUnitHelper.java
+/home/jairanderson/NetBeansProjects/projeto-praticas/src/main/java/io/github/jass2125/projeto/praticas/dao/GameDaoImpl.java
+/home/jairanderson/NetBeansProjects/projeto-praticas/src/main/java/io/github/jass2125/projeto/praticas/facade/PessoaFacadeImpl.java
+/home/jairanderson/NetBeansProjects/projeto-praticas/src/main/java/io/github/jass2125/projeto/praticas/infraestrutura/db/ConnectionHelper.java
+/home/jairanderson/NetBeansProjects/projeto-praticas/src/main/java/io/github/jass2125/projeto/praticas/controlador/GameControlador.java
+/home/jairanderson/NetBeansProjects/projeto-praticas/src/main/java/io/github/jass2125/projeto/praticas/infraestrutura/db/InfrastructureException.java
+/home/jairanderson/NetBeansProjects/projeto-praticas/src/main/java/io/github/jass2125/projeto/praticas/facade/GameFacade.java
