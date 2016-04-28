@@ -1,42 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui">
-
     <h:head>
+        <title>Inicio</title>
     </h:head>
     <h:body>
-        <p:growl autoUpdate="true" />
-        <div id="container">
-            <div id="login_box">
-                <h:form id="formLogin" enctype="multipart/form-data">
+        
+        <h1>Cadastro de Pessoas</h1>
+        <h:form>
+            <h:panelGrid columns="3">
+                <h:outputLabel value="Email:"/>
+                <h:inputText id="nome"  value="#{pessoaControlador.pessoa.email}" size="20" />
+                <br/>
+                <h:outputLabel value="Senha:"/>
+                <p:password id="end"  size="20" value="#{pessoaControlador.pessoa.senha}" />
+                
+                <h:commandButton action="#{pessoaControlador.cadastrar()}" value="Cadastrar" />
 
-                    <p:growl autoUpdate="true" id="messages" />
+            </h:panelGrid>
+        </h:form>
+        <p:commandLink action="listaUsuarios.xhtml">Ver Usuarios</p:commandLink>
+        <h1>Cadastro de Games</h1>
+        <h:form>
+            <h:panelGrid columns="3">
+                <h:outputLabel value="Nome:"/>
+                <h:inputText id="nome"  value="#{gameControlador.game.nome}" size="20" />
+                <br/>
+                <h:outputLabel value="Genero:"/>
+                <h:inputText id="end"  size="20" value="#{gameControlador.game.genero}" />
+                
+                <h:commandButton action="#{gameControlador.cadastrar()}" value="Cadastrar" />
 
-                    <p:panelGrid styleClass="semBorda" columns="2">
+            </h:panelGrid>
+        </h:form>
+        
+        <p:commandLink action="listaGames.xhtml">Ver Games</p:commandLink>
 
-                        <h:outputText value="Login: " />
-                        <p:inputText value="#{loginControlador.pessoa.nome}" size="37" />
-
-                        <h:outputText value="Senha: " />
-                        <p:password value="#{loginControlador.pessoa.senha}" />
-
-                    </p:panelGrid>
-
-                    <br />
-                    <br />
-                    <p:panelGrid columns="2" styleClass="semBorda">
-                        <p:commandButton icon="ui-icon-unlocked" value="Entrar" action="#{loginControlador.login()}" />
-                    </p:panelGrid>
-                </h:form>
-
-
-            </div>
-
-
-        </div>
-        <!-- div container -->
+        
     </h:body>
 </html>

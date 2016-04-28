@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+    <pessoa id="15" 
+            email="anderson" 
+            senha="123" 
+            />
+    <game id="1"
+          nome="RE4"
+          genero="Suspense"/>
+    <pessoa id="16" 
+            email="priscila" 
+            senha="123" 
+            />
+    <game id="5"
+          nome="Mario"
+          genero="aventura"/>
+</dataset>
+
+ 
+ 

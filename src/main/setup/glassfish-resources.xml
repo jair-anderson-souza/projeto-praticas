@@ -19,7 +19,7 @@
                           max-connection-usage-count="0" 
                           max-pool-size="32" 
                           max-wait-time-in-millis="60000" 
-                          name="pp1" 
+                          name="pp" 
                           non-transactional-connections="false" 
                           pool-resize-quantity="2" 
                           res-type="javax.sql.DataSource" 
@@ -35,5 +35,5 @@
         <property name="URL" value="jdbc:mysql://localhost:3306/pp1"/>
         <property name="driverClass" value="com.mysql.jdbc.Driver"/>
     </jdbc-connection-pool>
-    <jdbc-resource enabled="true" jndi-name="jdbc/pp1" object-type="user" pool-name="pp1"/>
+    <jdbc-resource enabled="true" jndi-name="pp/jdbc" object-type="user" pool-name="pp"/>
 </resources>

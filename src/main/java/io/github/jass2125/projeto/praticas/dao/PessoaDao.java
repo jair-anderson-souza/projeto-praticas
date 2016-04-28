@@ -5,30 +5,22 @@
  */
 package io.github.jass2125.projeto.praticas.dao;
 
-import io.github.jass2125.projeto.praticas.Pessoa;
+import io.github.jass2125.projeto.praticas.entidades.Pessoa;
+import java.sql.SQLException;
 import java.util.List;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 
 /**
+ * Interface do DAO de user
  *
  * @author Anderson Souza
+ * @since 2015
  */
-public class PessoaDao {
-    @PersistenceContext(unitName = "pp")
-    private EntityManager em;
-    
-    public Pessoa buscarPorNomeESenha(String nome, String senha){
-        Query query = em.createQuery("SELECT P FROM Pessoa P WHERE P.nome = :nome AND p.senha = :senha");
-        query.setParameter("nome", nome);
-        query.setParameter("senha", senha);
-        List<Pessoa> lista = query.getResultList();
-        return lista.get(0);
-    }
+public interface PessoaDao {
 
-    public void save(Pessoa pessoa) {
-        em.persist(pessoa);
-    }
+    public void addPessoa(Pessoa pessoa) throws SQLException, ClassNotFoundException;
+
+    public Pessoa buscar(String username, String email) throws SQLException, ClassNotFoundException;
+
+    public List<Pessoa> listar() throws SQLException, ClassNotFoundException;
 
 }

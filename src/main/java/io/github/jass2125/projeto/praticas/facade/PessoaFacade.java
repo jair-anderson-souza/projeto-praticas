@@ -5,7 +5,8 @@
  */
 package io.github.jass2125.projeto.praticas.facade;
 
-import io.github.jass2125.projeto.praticas.Pessoa;
+import io.github.jass2125.projeto.praticas.entidades.Pessoa;
+
 
 /**
  *
