@@ -8,6 +8,7 @@ package io.github.jass2125.projeto.praticas.dao;
 import edu.ifpb.pp.infraestrutura.db.DBUnitHelper;
 import io.github.jass2125.projeto.praticas.entidades.Game;
 import java.sql.SQLException;
+import java.util.List;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
@@ -45,22 +46,20 @@ public class GameDaoImplIT {
         assertNotNull(g);
     }
 
-//    @Test
-//    public void testRemover() {
-//        Pessoa p = new Pessoa(1L, null, img, cpf, end);
-//        boolean v = repo.remover(pessoa);
-//        assertTrue(v);
-//    }
+    @Test
+    public void testBuscar() throws SQLException, ClassNotFoundException {
+        Game g = dao.buscar(5);
+        assertNotNull(g);
+        g = dao.buscar(10);
+        assertNull(g);
+    }
 //
-//    @Test
-//    public void remover() {
-//        boolean result = repo.remover(1L);
-//        assertTrue(result);
-//    }
-//
-//   @Test
-//    public void localizar() {
-//        Pessoa p =repo.localizar(1L);
-//        assertNotNull(p);
-//    }
+
+    @Test
+    public void testListarGames() throws SQLException, ClassNotFoundException {
+        List<Game> lista = dao.listarGames();
+        int size = lista.size();
+        assertEquals(size, 3);
+        
+    }
 }
