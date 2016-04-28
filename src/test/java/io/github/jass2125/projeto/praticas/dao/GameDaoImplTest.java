@@ -5,24 +5,27 @@
  */
 package io.github.jass2125.projeto.praticas.dao;
 
-import edu.ifpb.pp.infraestrutura.db.DBUnitHelper;
 import io.github.jass2125.projeto.praticas.entidades.Game;
+import io.github.jass2125.projeto.praticas.infraestrutura.db.DBUnitHelper;
 import java.sql.SQLException;
 import java.util.List;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import org.junit.Before;
 import org.junit.Test;
+
 
 /**
  *
  * @author Anderson Souza
  */
-public class GameDaoImplIT {
+public class GameDaoImplTest {
 
     private GameDaoImpl dao;
     private Game game;
 
-    public GameDaoImplIT() {
+    public GameDaoImplTest() {
     }
 
     @Before

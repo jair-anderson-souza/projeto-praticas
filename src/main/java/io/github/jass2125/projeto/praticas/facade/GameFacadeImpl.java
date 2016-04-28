@@ -36,21 +36,24 @@ public class GameFacadeImpl implements GameFacade {
     }
 
     @Override
-    public void salvar(Game game) {
+    public boolean salvar(Game game) {
         try {
             dao.salvar(game);
+            return true;
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
+            return false;
         }
     }
 
-    public void deletar(int id) {
+    @Override
+    public boolean deletar(int id) {
         try {
             dao.delete(id);
-        } catch (SQLException ex) {
-            Logger.getLogger(GameFacadeImpl.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(GameFacadeImpl.class.getName()).log(Level.SEVERE, null, ex);
+            return true;
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+            return false;
         }
     }
 

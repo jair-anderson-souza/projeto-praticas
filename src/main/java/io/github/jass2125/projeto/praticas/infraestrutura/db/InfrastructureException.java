@@ -1,4 +1,4 @@
-package edu.ifpb.pp.infraestrutura.db;
+package io.github.jass2125.projeto.praticas.infraestrutura.db;
 
 
 

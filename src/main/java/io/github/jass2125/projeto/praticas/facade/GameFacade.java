@@ -15,6 +15,9 @@ import java.util.List;
 public interface GameFacade {
 
     public List<Game> listarGames();
-    public void salvar(Game game);
+
+    public boolean salvar(Game game);
+
+    public boolean deletar(int id);
 
 }
