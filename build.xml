@@ -8,6 +8,6 @@
 			<exec executable="${ant.dir.bin}/startup.sh"/>
 		</target>
 		<target name="deploy.tomcat">
-			<copy file="workspace/target/projeto-praticas-1.0.war" todir="${tom.cat.webapps}"/>
+			<copy file="target/projeto-praticas-1.0.war" todir="${tom.cat.webapps}"/>
 		</target>
 </project>
