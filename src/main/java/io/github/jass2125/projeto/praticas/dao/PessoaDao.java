@@ -5,22 +5,16 @@
  */
 package io.github.jass2125.projeto.praticas.dao;
 
-import io.github.jass2125.projeto.praticas.entidades.Pessoa;
+import io.github.jass2125.projeto.praticas.entidades.Usuario;
 import java.sql.SQLException;
 import java.util.List;
 
-/**
- * Interface do DAO de user
- *
- * @author Anderson Souza
- * @since 2015
- */
 public interface PessoaDao {
 
-    public void addPessoa(Pessoa pessoa) throws SQLException, ClassNotFoundException;
+    public void addPessoa(Usuario pessoa) throws SQLException, ClassNotFoundException;
 
-    public Pessoa buscar(String username, String email) throws SQLException, ClassNotFoundException;
+    public Usuario buscar(String username, String email) throws SQLException, ClassNotFoundException;
 
-    public List<Pessoa> listar() throws SQLException, ClassNotFoundException;
+    public List<Usuario> listar() throws SQLException, ClassNotFoundException;
 
 }

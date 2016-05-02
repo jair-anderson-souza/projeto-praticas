@@ -5,9 +5,9 @@
  */
 package io.github.jass2125.projeto.praticas.dao;
 
-import com.mysql.jdbc.exceptions.MySQLIntegrityConstraintViolationException;
-import io.github.jass2125.projeto.praticas.entidades.Pessoa;
-import io.github.jass2125.sistema.alocacao.core.factory.ConnectionFactory;
+import io.github.jass2125.projeto.praticas.entidades.Usuario;
+import io.github.jass2125.projeto.praticas.factory.ConnectionFactory;
+import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,13 +15,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Classe que implementa os DAO's de usuario
- *
- * @author Anderson Souza
- * @since 2015
- */
-public class PessoaDaoImpl implements PessoaDao {
+public class PessoaDaoImpl implements PessoaDao, Serializable {
 
     private final ConnectionFactory connectionFactory;
 
@@ -30,7 +24,7 @@ public class PessoaDaoImpl implements PessoaDao {
     }
 
     @Override
-    public void addPessoa(Pessoa pessoa) throws SQLException, ClassNotFoundException {
+    public void addPessoa(Usuario pessoa) throws SQLException, ClassNotFoundException {
         String sql = "insert into pessoa(email, senha) values(?, ?);";
         Connection con = connectionFactory.getConnection();
         PreparedStatement ps = con.prepareStatement(sql);
@@ -43,7 +37,7 @@ public class PessoaDaoImpl implements PessoaDao {
     }
 
     @Override
-    public Pessoa buscar(String email, String senha) throws SQLException, ClassNotFoundException {
+    public Usuario buscar(String email, String senha) throws SQLException, ClassNotFoundException {
         String sql = "select * from pessoa where binary email = ? or binary senha = ?;";
         Connection con = connectionFactory.getConnection();
         PreparedStatement ps = con.prepareStatement(sql);
@@ -52,7 +46,7 @@ public class PessoaDaoImpl implements PessoaDao {
         ResultSet rs = ps.executeQuery();
         if (rs.next()) {
             Long idPessoa = rs.getLong("id");
-            return new Pessoa(idPessoa, email, senha);
+            return new Usuario(idPessoa, email, senha);
         }
         rs.close();
         ps.clearParameters();
@@ -61,18 +55,18 @@ public class PessoaDaoImpl implements PessoaDao {
     }
 
     @Override
-    public List<Pessoa> listar() throws SQLException, ClassNotFoundException {
+    public List<Usuario> listar() throws SQLException, ClassNotFoundException {
         String sql = "select * from pessoa;";
         Connection con = connectionFactory.getConnection();
         PreparedStatement ps = con.prepareStatement(sql);
-        List<Pessoa> list = new ArrayList<>();
+        List<Usuario> list = new ArrayList<>();
         ResultSet rs = ps.executeQuery();
 
         while (rs.next()) {
             Long id = rs.getLong("id");
             String email = rs.getString("email");
             String senha = rs.getString("senha");
-            Pessoa pessoa = new Pessoa(id, email, senha);
+            Usuario pessoa = new Usuario(id, email, senha);
             list.add(pessoa);
         }
         rs.close();

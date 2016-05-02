@@ -3,18 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package io.github.jass2125.sistema.alocacao.core.factory;
+package io.github.jass2125.projeto.praticas.factory;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
-/**
- *
- * @author Anderson Souza
- * @since 2015, Feb 10, 2016
- */
 public class ConnectionFactory {
 
     private Connection connection;

@@ -7,27 +7,22 @@ package io.github.jass2125.projeto.praticas.facade;
 
 import io.github.jass2125.projeto.praticas.dao.PessoaDao;
 import io.github.jass2125.projeto.praticas.dao.PessoaDaoImpl;
-import io.github.jass2125.projeto.praticas.entidades.Pessoa;
+import io.github.jass2125.projeto.praticas.entidades.Usuario;
+import java.io.Serializable;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author Anderson Souza
- */
-public class PessoaFacadeImpl implements PessoaFacade {
-//    @Inject
+public class UsuarioFacadeImpl implements Serializable {
 
     private PessoaDao dao;
 
-    public PessoaFacadeImpl() {
+    public UsuarioFacadeImpl() {
         dao = new PessoaDaoImpl();
     }
 
-    @Override
-    public Pessoa buscarPorNomeESenha(String email, String senha) {
+    public Usuario buscarPorNomeESenha(String email, String senha) {
         try {
             return dao.buscar(email, senha);
         } catch (SQLException | ClassNotFoundException e) {
@@ -36,25 +31,22 @@ public class PessoaFacadeImpl implements PessoaFacade {
         }
     }
 
-    @Override
-    public void cadastrar(Pessoa pessoa) {
+    public void cadastrar(Usuario pessoa) {
         try {
             dao.addPessoa(pessoa);
         } catch (SQLException ex) {
-            Logger.getLogger(PessoaFacadeImpl.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UsuarioFacadeImpl.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(PessoaFacadeImpl.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UsuarioFacadeImpl.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
-    public List<Pessoa> listar() {
+    public List<Usuario> listar() {
         try {
             return dao.listar();
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
-            System.out.println("NULL");
             return null;
         }
     }
-
 }

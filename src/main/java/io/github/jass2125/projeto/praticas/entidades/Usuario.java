@@ -6,28 +6,20 @@
 package io.github.jass2125.projeto.praticas.entidades;
 
 import java.io.Serializable;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
-/**
- *
- * @author Anderson Souza
- */
-public class Pessoa implements Serializable {
+public class Usuario implements Serializable {
 
     private Long id;
     private String email;
     private String senha;
 
-    public Pessoa(Long id, String email, String senha) {
+    public Usuario(Long id, String email, String senha) {
         this.id = id;
         this.email = email;
         this.senha = senha;
     }
 
-    public Pessoa() {
+    public Usuario() {
     }
 
     public Long getId() {

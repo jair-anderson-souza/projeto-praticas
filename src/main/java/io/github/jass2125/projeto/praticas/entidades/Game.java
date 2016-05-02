@@ -7,13 +7,9 @@ package io.github.jass2125.projeto.praticas.entidades;
 
 import java.io.Serializable;
 
-/**
- *
- * @author Anderson Souza
- */
 public class Game implements Serializable {
 
-    private int id;
+    private Long id;
     private String nome;
     private String genero;
 
@@ -25,17 +21,17 @@ public class Game implements Serializable {
         this.genero = genero;
     }
 
-    public Game(int id, String nome, String genero) {
+    public Game(Long id, String nome, String genero) {
         this.id = id;
         this.nome = nome;
         this.genero = genero;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

@@ -6,7 +6,7 @@
 package io.github.jass2125.projeto.praticas.dao;
 
 import io.github.jass2125.projeto.praticas.entidades.Game;
-import io.github.jass2125.sistema.alocacao.core.factory.ConnectionFactory;
+import io.github.jass2125.projeto.praticas.factory.ConnectionFactory;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -14,10 +14,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author Anderson Souza
- */
 public class GameDaoImpl implements GameDao {
 
     private final ConnectionFactory connectionFactory;
@@ -28,14 +24,14 @@ public class GameDaoImpl implements GameDao {
 
     @Override
     public List<Game> listarGames() throws SQLException, ClassNotFoundException {
-        String sql = "select * from game";
+        String sql = "select * from game;";
         Connection con = connectionFactory.getConnection();
         PreparedStatement ps = con.prepareStatement(sql);
         List<Game> list = new ArrayList<>();
         ResultSet rs = ps.executeQuery();
 
         while (rs.next()) {
-            int id = rs.getInt("id");
+            Long id = rs.getLong("id");
             String nome = rs.getString("nome");
             String genero = rs.getString("genero");
             Game game = new Game(id, nome, genero);
@@ -49,7 +45,7 @@ public class GameDaoImpl implements GameDao {
 
     }
 
-    public Game buscar(int id) throws SQLException, ClassNotFoundException {
+    public Game buscar(Long id) throws SQLException, ClassNotFoundException {
         String sql = "select * from game where id = ?;";
         Connection con = connectionFactory.getConnection();
         PreparedStatement ps = con.prepareStatement(sql);
@@ -85,7 +81,7 @@ public class GameDaoImpl implements GameDao {
         String sql = "insert into game values(?, ?, ?);";
         Connection con = connectionFactory.getConnection();
         PreparedStatement ps = con.prepareStatement(sql);
-        ps.setInt(1, game.getId());
+        ps.setLong(1, game.getId());
         ps.setString(2, game.getNome());
         ps.setString(3, game.getGenero());
         ps.execute();
@@ -94,7 +90,7 @@ public class GameDaoImpl implements GameDao {
     }
 
     @Override
-    public void delete(int id) throws SQLException, ClassNotFoundException {
+    public void delete(Long id) throws SQLException, ClassNotFoundException {
         String sql = "delete from game where id = ?;";
         Connection con = connectionFactory.getConnection();
         PreparedStatement ps = con.prepareStatement(sql);
@@ -103,12 +99,4 @@ public class GameDaoImpl implements GameDao {
         ps.close();
         con.close();
     }
-
 }
-
-//create table game(
-//    id int auto_increment,
-//    nome varchar(30),
-//    genero varchar(30),
-//    primary key(id)
-//);

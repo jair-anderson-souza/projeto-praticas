@@ -8,10 +8,6 @@ package io.github.jass2125.projeto.praticas.facade;
 import io.github.jass2125.projeto.praticas.entidades.Game;
 import java.util.List;
 
-/**
- *
- * @author Anderson Souza
- */
 public interface GameFacade {
 
     public List<Game> listarGames();

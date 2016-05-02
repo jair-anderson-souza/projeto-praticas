@@ -9,14 +9,12 @@ import io.github.jass2125.projeto.praticas.entidades.Game;
 import io.github.jass2125.projeto.praticas.facade.GameFacadeImpl;
 import java.util.ArrayList;
 import java.util.List;
-import javax.faces.bean.ManagedBean;
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
+import javax.inject.Named;
 
-/**
- *
- * @author Anderson Souza
- */
-@ManagedBean
+@Named
+@RequestScoped
 public class GameControlador {
 
     private List<Game> games;
@@ -38,7 +36,7 @@ public class GameControlador {
         facade.salvar(game);
         game.setGenero(null);
         game.setNome(null);
-        return "index.xhtml";
+        return "home.xhtml";
     }
 
     public List<Game> listar() {

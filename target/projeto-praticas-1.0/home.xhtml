@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Inicio</title>
+    </h:head>
+    <h:body>
+        <h1>Cadastro de Pessoas</h1>
+        
+        <h:form>
+            <h:panelGrid columns="3">
+                <h:outputLabel value="Email:"/>
+                <h:inputText id="nome"  value="#{usuarioControlador.pessoa.email}" size="20" />
+                <br/>
+                <h:outputLabel value="Senha:"/>
+                <p:password id="end"  size="20" value="#{usuarioControlador.pessoa.senha}" />
+                
+                <h:commandButton action="#{usuarioControlador.cadastrar()}" value="Cadastrar" />
+
+            </h:panelGrid>
+        </h:form>
+        <p:commandLink action="listaUsuarios.xhtml">Ver Usuarios</p:commandLink>
+        <h1>Cadastro de Games</h1>
+        <h:form>
+            <h:panelGrid columns="3">
+                <h:outputLabel value="Nome:"/>
+                <h:inputText id="nome"  value="#{gameControlador.game.nome}" size="20" />
+                <br/>
+                <h:outputLabel value="Genero:"/>
+                <h:inputText id="end"  size="20" value="#{gameControlador.game.genero}" />
+                
+                <h:commandButton action="#{gameControlador.cadastrar()}" value="Cadastrar" />
+
+            </h:panelGrid>
+        </h:form>
+        
+        <p:commandLink action="listaGames.xhtml">Ver Games</p:commandLink>
+
+        
+    </h:body>
+</html>

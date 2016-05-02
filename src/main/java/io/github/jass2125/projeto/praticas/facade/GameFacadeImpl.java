@@ -8,16 +8,11 @@ package io.github.jass2125.projeto.praticas.facade;
 import io.github.jass2125.projeto.praticas.dao.GameDao;
 import io.github.jass2125.projeto.praticas.dao.GameDaoImpl;
 import io.github.jass2125.projeto.praticas.entidades.Game;
+import java.io.Serializable;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
-/**
- *
- * @author Anderson Souza
- */
-public class GameFacadeImpl implements GameFacade {
+public class GameFacadeImpl implements Serializable {
 
     private GameDao dao;
 
@@ -25,7 +20,6 @@ public class GameFacadeImpl implements GameFacade {
         this.dao = new GameDaoImpl();
     }
 
-    @Override
     public List<Game> listarGames() {
         try {
             return dao.listarGames();
@@ -35,7 +29,6 @@ public class GameFacadeImpl implements GameFacade {
         }
     }
 
-    @Override
     public boolean salvar(Game game) {
         try {
             dao.salvar(game);
@@ -46,8 +39,7 @@ public class GameFacadeImpl implements GameFacade {
         }
     }
 
-    @Override
-    public boolean deletar(int id) {
+    public boolean deletar(Long id) {
         try {
             dao.delete(id);
             return true;

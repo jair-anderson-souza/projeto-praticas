@@ -5,15 +5,12 @@
  */
 package io.github.jass2125.projeto.praticas.facade;
 
-import io.github.jass2125.projeto.praticas.entidades.Pessoa;
+import io.github.jass2125.projeto.praticas.entidades.Usuario;
 
+public interface UsuarioFacade {
 
-/**
- *
- * @author Anderson Souza
- */
-public interface PessoaFacade {
+    public Usuario buscarPorNomeESenha(String nome, String senha);
 
-    public Pessoa buscarPorNomeESenha(String nome, String senha);
-    public void cadastrar(Pessoa pessoa);
+    public void cadastrar(Usuario usuario);
+
 }
