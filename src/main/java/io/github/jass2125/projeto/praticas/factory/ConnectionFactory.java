@@ -21,7 +21,7 @@ public class ConnectionFactory {
         this.info = new Properties();
         info.setProperty("user", "root");
         this.classDriver = "com.mysql.jdbc.Driver";
-        info.setProperty("password", "12345");
+        info.setProperty("password", "123");
         url = "jdbc:mysql://localhost:3306/pp1";
     }
 
